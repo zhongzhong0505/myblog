@@ -21,7 +21,7 @@ publishes属性在作为items中的item的配置的时候，可以是字符串�
      	fieldLabel:true
 	}
 ```
-
+{% githubCard user:zhongzhong0505 %}
 
 关于我: [Github](https://github.com/zhongzhong0505)
 

@@ -112,7 +112,7 @@ c的配置
 
 这种方法是其实是利用了bind，将a和b发布到了vm中
 
-关于我: [Github](https://github.com/zhongzhong0505)
+{% githubCard user:zhongzhong0505 %}
 
 
 
