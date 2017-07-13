@@ -1,5 +1,9 @@
 title: About
 type: "about"
-comments: false
+comments: true
+
 ---
+
+self: sdfsdfd
+
 奋斗奋斗奋斗
