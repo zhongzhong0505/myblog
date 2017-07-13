@@ -57,6 +57,10 @@ default_category: uncategorized
 category_map:
 tag_map:
 
+search:
+  path: search.xml
+  field: post
+
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
