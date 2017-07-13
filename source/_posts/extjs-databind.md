@@ -38,6 +38,9 @@ vm.bind('{foo}',this.onFoo,this,{
 })
 
 ```
+
+<!-- more -->
+
 //combobox绑定
 
 绑定到combobox的displayField

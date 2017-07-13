@@ -7,7 +7,7 @@ title: 【Extjs】reference的作用
 在view中如果指定了viewcontroller，才能使用lookup查找组件，如果没有指定viewcontroller，则需要在view中指定referenceHolder为true，这样
 在组件中才能通过lookup查找组件。
 
-
+<!-- more -->
 
 ## reference和数据绑定
 
