@@ -1,5 +1,6 @@
 ---
 title: 【Extjs】ui的用法
+tags: [extjs,js]
 ---
 button：
 ```scss

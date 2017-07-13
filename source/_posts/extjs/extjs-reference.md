@@ -1,5 +1,6 @@
 ---
 title: 【Extjs】reference的作用
+tags: [extjs,js]
 ---
 ## reference：
 

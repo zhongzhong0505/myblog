@@ -55,6 +55,9 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  extjs: programming
+  js: js
+  other: other
 tag_map: 
 
 search:

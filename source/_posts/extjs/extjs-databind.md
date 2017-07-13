@@ -1,5 +1,6 @@
 ---
 title: 【Extjs】数据绑定
+tags: [extjs,js]
 ---
 ```js
 var vm = new Ext.app.ViewModel();
