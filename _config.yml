@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 钟钟的博客
 subtitle:
-description:
-author: John Doe
-language:
+description: 钟钟的个人博客
+author: 钟钟
+language: zh-CN
 timezone:
 
 # URL
