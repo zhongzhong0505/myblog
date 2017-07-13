@@ -1,9 +1,4 @@
----
 title: About
----
 type: "about"
-comments: true
-
+comments: false
 ---
-
-{% githubCard user:Gisonrg %}
