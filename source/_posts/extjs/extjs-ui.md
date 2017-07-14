@@ -1,7 +1,7 @@
 ---
 title: 【Extjs】ui的用法
 tags: [extjs,js]
-date: 2017-07-13
+date: 2017-07-13 13:23:17
 ---
 button：
 ```scss

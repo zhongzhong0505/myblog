@@ -1,7 +1,7 @@
 ---
 title: 【Extjs】alias和xtype的区别
 tags: [extjs,js]
-date: 2017-07-14
+date: 2017-07-14 13:23:17
 ---
 
 

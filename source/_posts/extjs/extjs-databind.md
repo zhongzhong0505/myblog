@@ -1,7 +1,7 @@
 ---
 title: 【Extjs】数据绑定
 tags: [extjs,js]
-date: 2017-07-13
+date: 2017-07-13 13:23:17
 ---
 ```js
 var vm = new Ext.app.ViewModel();
