@@ -19,4 +19,4 @@ tags: test
 {% img [class names] /test/logo.png ['100px'] [100] %}
 ```
 
-{% img [class names] /test/logo.png ['100px'] [100] %}
+{% img [class names] /test/alipay.png ['100px'] [100] %}
