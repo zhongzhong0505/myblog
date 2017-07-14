@@ -1,0 +1,128 @@
+# ===========================================
+# Information Settings
+# ===========================================
+
+#navigation
+menu:
+  article: /
+  archives: /archives
+  tags: /tags
+  about: /about
+  # RSS: /atom.xml
+
+# favicon
+favicon:
+
+# ===========================================
+# Article Setting
+# ===========================================
+
+# Header Sign
+header_sign: ∮
+
+# Navigator in post
+toc: true
+
+# Use copyright infomation
+copyright:
+  enable: true
+  license:
+
+#Reword button or message(fill your QRCode of any Pay.)
+reward:
+  enable: false
+  alipay:
+  wechat:
+  paypal:
+
+# ===========================================
+# Social Contact
+# ===========================================
+
+# Comments // Please only switch one on.
+comments:
+  enable: true
+  disqus: codebe
+  uyan: 
+  duoshuo:
+  netease:
+
+# sub //Please just fill out ID.
+sub:
+#  facebook:
+#  twitter:
+#  instagram:
+#  weibo:
+#  zhihu:
+ github: zhongzhong0505
+#  linkedin:
+
+#Friend link
+#friendLink:
+
+# ===========================================
+# Analytics
+# ===========================================
+
+google_analytics: UA-102487515-1
+
+# baidu_analytics:
+
+#visit_count(Powered by busuanzi on http://busuanzi.ibruce.info/)
+visit_count: true
+
+# ===========================================
+# Theme Settings
+# ===========================================
+
+# lightbox
+lightbox: true
+
+# animate (Powered by Syuanpi on https://colmugx.github.io/Syuanpi.css)
+animate: true
+
+# Created Time
+since: 2017
+
+#about
+self: <a href="mailto:zhongzhong@asloop.com">我是钟钟</a>
+  <p>这里主要是记录一些技术博文。</p>
+
+# ===========================================
+# Search Settings
+# ===========================================
+
+# Search
+search: true
+
+greetings:
+  morning: 当我们探索时，就要发现到真理
+  noon: 人的天职在于勇于探索真理。
+  after: 一件事实是一条没有性别的真理
+  night: 真理有时可能变得黯淡，但它永远不会熄灭
+  midnight: 真理在人那里获得生命力，并且展现出来
+
+# greetings:
+#   morning: '早上好，请问您需要点什么？'
+#   noon: '记得午休吃饭，不着急看我的博客~'
+#   after: '下午好，感谢查阅我的博客'
+#   night: '您来我的博客看笑话当做休息嘛'
+#   midnight: '我觉得大半夜就不要看啦'
+
+# ===========================================
+# Documents Styles
+# ===========================================
+
+# theme-style
+theme-style: gray
+
+# article-fonts
+# default | Simsun | YaHei | Hel
+fonts-style: default
+
+# ===========================================
+# Version
+# ===========================================
+version: 1.4
+
+#theme_author: Co1MugX
