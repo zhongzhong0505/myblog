@@ -10,7 +10,7 @@ tags: test
 ```
 ![logo](test/logo.png)
 ```
-![logo](test/logo.png)
+![logo](test/weixin.jpg)
 
 <!-- more -->
 
