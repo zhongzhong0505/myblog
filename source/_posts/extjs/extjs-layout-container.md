@@ -127,3 +127,5 @@ containerPanel.updateLayout();
 https://docs.sencha.com/extjs/6.2.1/modern/Ext.Component.html#cfg-componentLayout
 
 通常，您不需要使用此配置，除非您正在编写自定义组件，因为所有提供的组件都带有自己的布局管理器。大多数组件使用自动布局，但更复杂的组件将需要自定义组件布局（例如Panel包括header，footer，toolbars）。
+
+原文地址：https://docs.sencha.com/extjs/6.2.1/guides/core_concepts/layouts.html
