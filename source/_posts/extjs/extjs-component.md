@@ -139,7 +139,70 @@ Ext.define('My.custom.Component', {
 这个例子创建了一个新类-My.custom.Component，它继承了Ext.Component的所有功能（方法，属性，等等）。可以添加任何新的方法和属性定义到该类中。
 
 ### 模板方法
-ExtJS使用模板方法模式委托给子类，该行为只针对子类。这意味着继承链中的每个类可能会为组件生命周期中的某些阶段“贡献”一个额外的逻辑。每个类实现自己的特殊行为，同时允许继承链中的其他类继续贡献自己的逻辑。
+ExtJS使用模板方法模式委托给子类，该行为只针对子类。
 
-未完。。。
+这意味着继承链中的每个类可能会为组件生命周期中的某些阶段“贡献”一个额外的逻辑。每个类实现自己的特殊行为，同时允许继承链中的其他类继续贡献自己的逻辑。
 
+一个典型的例子就是render函数。<strong>render</strong>是一个定义在Component中的函数。它负责启动组件生命周期的渲染阶段。<strong>render</strong>不能够被重写，但是它在执行期间会调用<strong>onRender</strong>，允许子类实现<strong>onRender</strong>方法，执行特定的一些处理。每一个<strong>onRender</strong>方法在处理自己的逻辑之前必须调用父类的<strong>onRender</strong>方法。
+
+下图说明了<strong>onRender</strong>模板方法的功能。
+
+调用render方法（这是由容器的布局管理器完成的）。此方法可能不会被覆盖，并由Ext基类实现（Ext.Base）。基类会调用this.onRender方法，这个方法是子类实现的。这个方法会调用父类的this.onRender方法，父类的方法又会再调用它父类的方法，一直到Component。最终，每个类都贡献了它的功能，并且控制返回到render函数。
+
+![logo](extjs-component/template_pattern.png)
+
+以下是实现onRender方法的Component子类的示例：
+```js
+Ext.define('My.custom.Component', {
+    extend: 'Ext.Component',
+    onRender: function() {
+        this.callParent(arguments); // call the superclass onRender method
+
+        // perform additional rendering tasks here.
+    }
+});
+```
+
+重要的是要注意，许多模板方法也有一个相应的事件。例如，组件渲染完成之后会触发render事件。然而，当进行子类化时，必须使用模板方法在生命周期的重要阶段执行类逻辑，而不是事件。事件可以以编程方式暂停，也可能由处理程序停止。
+
+以下是可以在Component子类实现的模版方法：
+
+*initComponent 这个方法通过构造函数调用。它用来初始化数据，设置配置，处理事件监听。
+*beforeShow 这个方法再组件显示之前调用。
+*onShow 允许添加额外的行为到show操作中。调用了父类的onShow方法后，组件将会变成可见。
+*afterShow 这个方法再组件显示之后调用。
+*onShowComplete 这个方法再执行完afterShow之后调用。
+*onHide 允许添加额外的行为到hide操作中。调用了父类的onHide方法后，组件将会变为不可见。
+*afterHide 这个方法再组件隐藏之后调用。
+*onRender 允许在渲染阶段添加行为。
+*afterRender 允许在渲染完成后添加行为。在这个阶段，组件的元素将根据配置进行样式化，将添加任何配置的CSS类名称，并且将处于已配置的可见性和已配置的启用状态。
+*onEnable 允许添加额外的行为到enable操作。当父类调用完onEnable之后，组件将变得可用。
+*onDisable 允许添加额外的行为到disable操作。当父类调用完onDisable之后，组件将变得可用。
+*onAdded 当组件添加到容器中的时候，允许添加额外的行为。在这个阶段，组件存在父组件容器的items集合中。当父类调用onAdded方法时，调用超类的onAdded后，ownerCt引用将出现，如果配置了ref，则refOwner将被设置。
+*onRemoved 当组件从容器中移除的时候，允许添加额外的行为。在这个阶段，组件将从它的父容器的items集合中移除，但是并没有销毁（如果父容器设置了autoDestroy=true或者调用remove方法的时候给第二个参数赋值为true，将会被立即销毁）。当调用父类的onREmoved方法时，ownerCt引用将出现，但是refOwner不会出现。
+*onResize 允许添加额外的行为到resize操作。
+*onPosition 允许添加额外的行为到position操作。
+*onDestroy 允许添加额外的行为到destroy操作。当父类调用onDestroy时，组件将会被销毁。
+*beforeDestroy 这个方法再组件销毁之前被调用。
+*afterSetPosition 这个方法再组件position被设置之后调用。
+*afterComponentLayout 这个方法再组件布局完成之后被调用。
+*beforeComponentLayout 这个方法再组件布局完成之前被调用。
+
+### 哪个类要扩展？
+选择最合适的类去扩展，主要是为了提高效率。基类必须要提供哪些能力。每当需要呈现和管理任何一组UI组件时，总是会扩展Ext.panel.Panel。
+
+Panel类有许多功能：
+*Border
+*Header
+*Header tools
+*Footer
+*Footer buttons
+*Top toolbar
+*Bottom toolbar
+*Containing and managing child Components
+
+如果这个是不需要的，使用Panel就是浪费资源。
+
+### 组件
+
+未完
