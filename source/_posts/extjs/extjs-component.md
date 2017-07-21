@@ -167,39 +167,39 @@ Ext.define('My.custom.Component', {
 
 以下是可以在Component子类实现的模版方法：
 
-*initComponent 这个方法通过构造函数调用。它用来初始化数据，设置配置，处理事件监听。
-*beforeShow 这个方法再组件显示之前调用。
-*onShow 允许添加额外的行为到show操作中。调用了父类的onShow方法后，组件将会变成可见。
-*afterShow 这个方法再组件显示之后调用。
-*onShowComplete 这个方法再执行完afterShow之后调用。
-*onHide 允许添加额外的行为到hide操作中。调用了父类的onHide方法后，组件将会变为不可见。
-*afterHide 这个方法再组件隐藏之后调用。
-*onRender 允许在渲染阶段添加行为。
-*afterRender 允许在渲染完成后添加行为。在这个阶段，组件的元素将根据配置进行样式化，将添加任何配置的CSS类名称，并且将处于已配置的可见性和已配置的启用状态。
-*onEnable 允许添加额外的行为到enable操作。当父类调用完onEnable之后，组件将变得可用。
-*onDisable 允许添加额外的行为到disable操作。当父类调用完onDisable之后，组件将变得可用。
-*onAdded 当组件添加到容器中的时候，允许添加额外的行为。在这个阶段，组件存在父组件容器的items集合中。当父类调用onAdded方法时，调用超类的onAdded后，ownerCt引用将出现，如果配置了ref，则refOwner将被设置。
-*onRemoved 当组件从容器中移除的时候，允许添加额外的行为。在这个阶段，组件将从它的父容器的items集合中移除，但是并没有销毁（如果父容器设置了autoDestroy=true或者调用remove方法的时候给第二个参数赋值为true，将会被立即销毁）。当调用父类的onREmoved方法时，ownerCt引用将出现，但是refOwner不会出现。
-*onResize 允许添加额外的行为到resize操作。
-*onPosition 允许添加额外的行为到position操作。
-*onDestroy 允许添加额外的行为到destroy操作。当父类调用onDestroy时，组件将会被销毁。
-*beforeDestroy 这个方法再组件销毁之前被调用。
-*afterSetPosition 这个方法再组件position被设置之后调用。
-*afterComponentLayout 这个方法再组件布局完成之后被调用。
-*beforeComponentLayout 这个方法再组件布局完成之前被调用。
+* initComponent 这个方法通过构造函数调用。它用来初始化数据，设置配置，处理事件监听。
+* beforeShow 这个方法再组件显示之前调用。
+* onShow 允许添加额外的行为到show操作中。调用了父类的onShow方法后，组件将会变成可见。
+* afterShow 这个方法再组件显示之后调用。
+* onShowComplete 这个方法再执行完afterShow之后调用。
+* onHide 允许添加额外的行为到hide操作中。调用了父类的onHide方法后，组件将会变为不可见。
+* afterHide 这个方法再组件隐藏之后调用。
+* onRender 允许在渲染阶段添加行为。
+* afterRender 允许在渲染完成后添加行为。在这个阶段，组件的元素将根据配置进行样式化，将添加任何配置的CSS类名称，并且将处于已配置的可见性和已配置的启用状态。
+* onEnable 允许添加额外的行为到enable操作。当父类调用完onEnable之后，组件将变得可用。
+* onDisable 允许添加额外的行为到disable操作。当父类调用完onDisable之后，组件将变得可用。
+* onAdded 当组件添加到容器中的时候，允许添加额外的行为。在这个阶段，组件存在父组件容器的items集合中。当父类调用onAdded方法时，调用超类的onAdded后，ownerCt引用将出现，如果配置了ref，则refOwner将被设置。
+* onRemoved 当组件从容器中移除的时候，允许添加额外的行为。在这个阶段，组件将从它的父容器的items集合中移除，但是并没有销毁（如果父容器设置了autoDestroy=true或者调用remove方法的时候给第二个参数赋值为true，将会被立即销毁）。当调用父类的onREmoved方法时，ownerCt引用将出现，但是refOwner不会出现。
+* onResize 允许添加额外的行为到resize操作。
+* onPosition 允许添加额外的行为到position操作。
+* onDestroy 允许添加额外的行为到destroy操作。当父类调用onDestroy时，组件将会被销毁。
+* beforeDestroy 这个方法再组件销毁之前被调用。
+* afterSetPosition 这个方法再组件position被设置之后调用。
+* afterComponentLayout 这个方法再组件布局完成之后被调用。
+* beforeComponentLayout 这个方法再组件布局完成之前被调用。
 
 ### 哪个类要扩展？
 选择最合适的类去扩展，主要是为了提高效率。基类必须要提供哪些能力。每当需要呈现和管理任何一组UI组件时，总是会扩展Ext.panel.Panel。
 
 Panel类有许多功能：
-*Border
-*Header
-*Header tools
-*Footer
-*Footer buttons
-*Top toolbar
-*Bottom toolbar
-*Containing and managing child Components
+* Border
+* Header
+* Header tools
+* Footer
+* Footer buttons
+* Top toolbar
+* Bottom toolbar
+* Containing and managing child Components
 
 如果这个是不需要的，使用Panel就是浪费资源。
 
