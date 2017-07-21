@@ -205,4 +205,62 @@ Panel类有许多功能：
 
 ### 组件
 
+如果所需的UI组件不需要包含任何其他组件，也就是说，如果只是封装某些形式的HTML来执行要求，则扩展Ext.Component是适当的。例如，以下类是包装HTML图像元素的组件，并允许设置和获取图像的src属性。 加载图像时也会触发加载事件：
+
+```js
+Ext.define('Ext.ux.Image', {
+    extend: 'Ext.Component', // subclass Ext.Component
+    alias: 'widget.managedimage', // this component will have an xtype of 'managedimage'
+
+    autoEl: {
+        tag: 'img',
+        src: Ext.BLANK_IMAGE_URL,
+        cls: 'my-managed-image'
+    },
+
+    // Add custom processing to the onRender phase.
+    // Add a 'load' listener to the element.
+    onRender: function() {
+        this.autoEl = Ext.apply({}, this.initialConfig, this.autoEl);
+        this.callParent(arguments);
+        this.el.on('load', this.onLoad, this);
+    },
+
+    onLoad: function() {
+        this.fireEvent('load', this);
+    },
+
+    setSrc: function(src) {
+        if (this.rendered) {
+            this.el.dom.src = src;
+        } else {
+            this.src = src;
+        }
+    },
+
+    getSrc: function(src) {
+        return this.el.dom.src || this.src;
+    }
+});
+Usage:
+
+var image = Ext.create('Ext.ux.Image');
+
+Ext.create('Ext.panel.Panel', {
+    title: 'Image Panel',
+    height: 200,
+    renderTo: Ext.getBody(),
+    items: [ image ]
+});
+
+image.on('load', function() {
+    console.log('image loaded: ', image.getSrc());
+});
+
+image.setSrc('http://www.sencha.com/img/sencha-large.png');
+```
+此示例仅用于演示目的 - Ext.Img类应用于管理现实世界应用程序中的图像。
+
+### 容器
+
 未完
