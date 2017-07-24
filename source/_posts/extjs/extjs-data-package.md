@@ -32,6 +32,8 @@ tags: [extjs,js]
 
 通常最好从一个普通的基类开始定义你的模型。这个基础类允许您轻松地在一个地方为所有模型配置一些通用的属性。它也是配置schema的好地方。schema用来管理应用程序中所有模型。现在我们将关注两个最有用的配置选项：
 
+<!-- more -->
+
 ```js
 Ext.define('MyApp.model.Base', {
     extend: 'Ext.data.Model',
