@@ -261,6 +261,30 @@ image.setSrc('http://www.sencha.com/img/sencha-large.png');
 ```
 此示例仅用于演示目的 - Ext.Img类应用于管理现实世界应用程序中的图像。
 
-### 容器
+### 容器（Container）
 
-未完
+如果需要一个UI组件包含另外一个组件，但是不需要任何之前提到过的Panel的高级功能，Ext.container.Container是最适合继承的类。在容器（Container）级别，最重要的是Ext.layout.container.Container，它是用来渲染和管理子组件的。
+
+容器包含以下额外的模版方法：
+* onBeforeAdd 这个方法在添加一个新的子组件之前被调用。这个方法的参数为要添加的子组件对象，也许需要在这个方法更改组件或者容器需要做一些准备工作。
+* onAdd 这个方法在一个新的组件被添加之后调用。这个方法的参数为要添加的子组件对象。这个方法可能更新任何抵赖子组件状态的内部结构。
+* onRemove 这个方法在组件被移除以后被调用。这个方法的参数为被移除的子组件对象。这个方法可能更新任何抵赖子组件状态的内部结构。
+* beforeLayout 这个方法再容器的子组件布局完成之前被调用。
+* afterLayout 这个方法再容器的子组件布局完成之后被调用。
+
+### 面板（Panel）
+
+如果需要UI组件必须要有header，footer或者toolbar，则Ext.panel.Panel是最适合被继承的类。
+
+<strong>注意：</strong>一个面板是一个容器。最重要的是要记住它的Layout是用来渲染和管理子组件的。
+
+
+扩展Ext.panel.Panel的类通常是特定与应用程序的，一般用来聚合其他UI组件（通常是容器，或者表单字段），并且在tbar和bbar中提供了一些控制组件的操作。
+
+面板包含以下额外的模版方法：
+* afterCollapse 这个方法再面板收缩之后被调用。
+* afterExpand 这个方法再面板展开之后被调用。
+* onDockedAdd 这个方法再添加docked item之后被调用。
+* onDockedRemove 这个方法再移除docked item之后被调用。
+
+原文地址：http://docs.sencha.com/extjs/6.5.1/guides/core_concepts/components.html
