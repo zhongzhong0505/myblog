@@ -1,5 +1,5 @@
 ---
-title: nginx-worker-process
+title: openresty的安装
 date: 2017-08-16 14:03:43
 tags: [nginx]
 ---
