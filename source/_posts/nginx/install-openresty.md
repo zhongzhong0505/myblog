@@ -1,3 +1,9 @@
+---
+title: nginx-worker-process
+date: 2017-08-16 14:03:43
+tags: [nginx]
+---
+
 ## 安装openresty
 ### mac
 ```js
