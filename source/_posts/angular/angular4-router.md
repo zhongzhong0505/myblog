@@ -12,6 +12,8 @@ Angular4在路由中有一些有用的更改。我们来看一下在路由的Can
 
 路由可以使用ActivatedRoute的快照属性或通过订阅其属性参数来接收参数。现在有一个属性paramMap，可以通过使用get（）方法获取一个特定的参数，或者通过调用getAll（）获取所有的参数。
 
+<!-- more -->
+
 以下是接收上一个路由中没有更改的参数ID的方法：
 ```js
 export class ProductDetailComponentParam {

@@ -8,6 +8,8 @@ tags: [angular,ts]
 
 了解如何使用Shadow DOM选择器，Light DOM，@HostBinding，ElementRef，Renderer，Sanitizer等。
 
+<!-- more -->
+
 ![输入图片说明](https://cdn-images-1.medium.com/max/1600/1*gZbmYGcpC7kJPChArG6IHg.png "在这里输入图片标题")
 
 在这个指南中，我们将介绍Angular的组件和指令中可选的各种属性。会覆盖以下方面：
