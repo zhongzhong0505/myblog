@@ -1,5 +1,5 @@
 ---
-title: Angular高级样式指南（V4+）
+title: 【翻译】Angular高级样式指南（V4+）
 date: 2017-08-29 10:42:24
 tags: [angular,ts]
 ---
