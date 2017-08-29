@@ -10,7 +10,7 @@ tags: [angular,ts]
 
 <!-- more -->
 
-![输入图片说明](https://cdn-images-1.medium.com/max/1600/1*gZbmYGcpC7kJPChArG6IHg.png "在这里输入图片标题")
+![输入图片说明](info-01.png)
 
 在这个指南中，我们将介绍Angular的组件和指令中可选的各种属性。会覆盖以下方面：
 
@@ -41,8 +41,7 @@ export class SongTrack { }
 ```
 
 请参考下面的最终效果：
-
-![输入图片说明](https://cdn-images-1.medium.com/max/1600/1*sUp_6FD88KxI2fgFUDFXqQ.gif "在这里输入图片标题")
+![输入图片说明](info-02.gif)
 
 ## Angular封装模式
 
@@ -126,11 +125,11 @@ export class SongTrack { }
 
 仿真：
 
-![输入图片说明](https://cdn-images-1.medium.com/max/1200/1*C5-g6Ez1PubW6MiDFwIXhQ.png "在这里输入图片标题")
+![输入图片说明](info-03.png)
 
 本地：
 
-![输入图片说明](https://cdn-images-1.medium.com/max/1200/1*ZX5kXrCU1_jF6DErqS01ew.png "在这里输入图片标题")
+![输入图片说明](info-04.png)
 
 ## Shadow DOM与Light DOM
 
