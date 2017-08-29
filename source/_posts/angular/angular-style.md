@@ -31,7 +31,7 @@ Angular应用的样式使用从未如此灵活。Angular组件体系结构提供
 
 对于这篇文章，我们将使用一个组件来渲染显示一些不同样式选项的歌曲曲目。这个组件将呈现一首歌曲的封面，标题和艺术家。
 
-```
+```js
 @Component({
   selector: 'song-track',   // <song-track></song-track>
 })
@@ -50,7 +50,7 @@ export class SongTrack { }
 
 使用此模式时，Angular将使用两个独特的属性来识别每个组件：_nghost- *和_ngcontent- *。使用这些属性将任何组件样式添加到head，以隔离样式，如下面的示例所示。
 
-```
+```js
 <head>
   <style>
     .container[_ngcontent-ikt-1] { ... } 
@@ -67,7 +67,7 @@ export class SongTrack { }
 
 注意以粗体显示添加到组件的根和内容中的属性。您可以使用下面的代码显式激活此模式。
 
-```
+```js
 @Component({
   selector: 'song-track',
   encapsulation: ViewEncapsulation.Emulated
@@ -80,7 +80,7 @@ export class SongTrack { }
 
 此封装将设置Angular为特定组件使用Native Shadow DOM。根据浏览器，这将是v1规范（Chrome）。
 
-```
+```js
 @Component({
   selector: 'song-track',
   encapsulation: ViewEncapsulation.Native
@@ -89,7 +89,7 @@ export class SongTrack { }
 
 这将显示以下内容。
 
-```
+```html
 <body>
   <my-app>
     <song-track>    
@@ -109,7 +109,7 @@ export class SongTrack { }
 
 我们还可以为特定的组件完全禁用封装。
 
-```
+```js
 @Component({
   selector: 'song-track',
   encapsulation: ViewEncapsulation.None
@@ -135,7 +135,7 @@ export class SongTrack { }
 在对我们的组件进行样式化时，可以帮助区分Shadow DOM和Light DOM。
 
 - Shadow DOM：组件创建或管理的任何本地DOM元素。这也包括任何子组件。
-```
+```js
 <song-track title="No Lie" artist="Sean Paul..."></song-track>
 @Component({
   selector: 'song-track',
@@ -148,7 +148,7 @@ export class SongTrack { }
 
 - Light DOM：组件的任何子DOM元素。也称为投影内容（ng-content）。
 
-```
+```js
 <song-track>
   <track-title>No Lie</track-title>
   <track-artist>Sean Paul, Dua Lipa</track-artist>
@@ -170,7 +170,7 @@ export class SongTrack { }
 
 当我们将样式添加到与组件相同的文件中时。首先在顶部以数组的方式添加：
 
-```
+```js
 @Component({
   selector: 'song-track',
   styles: [`.container { color: white; }`]
@@ -181,7 +181,7 @@ export class SongTrack { }
 
 我们还可以使用此功能将我们的样式嵌入到我们的模板中。在顶部添加：
 
-```
+```js
 @Component({
  template: `
    <style>
@@ -197,7 +197,7 @@ export class SongTrack { }
 
 当我们的组件需要更复杂的样式时，我们可以使用外部文件。
 
-```
+```js
 //song-track.component.css
 .container { ... }
 //song-track.component.ts
@@ -210,7 +210,7 @@ export class SongTrack { }
 
 作为CSS规范的一部分，我们还可以使用@import从其他样式表导入样式。@import必须在样式表的第一行。
 
-```
+```js
 @import 'common.css';
 .container { ... }
 ```
@@ -219,7 +219,7 @@ export class SongTrack { }
 
 我们可以使用ngClass和ngStyle指令来动态地调整我们的组件。我们来看一些常见的用法。
 
-```
+```html
 <song-track ngClass="selected" class="disabled"></song-track>
 <song-track [ngClass]="'selected'"></song-track>   
 <song-track [ngClass]="['selected']"></song-track> 
@@ -228,7 +228,7 @@ export class SongTrack { }
 
 请注意，ngClass可以与现有的类属性组合，也可以不使用任何绑定。要定位多个类，我们可以使用扩展语法和一些有趣的变体.
 
-```
+```html
 <song-track ngClass="selected disabled">             
 <song-track [ngClass]="'selected disabled'">      
 <song-track [ngClass]="['selected', 'disabled']">   
@@ -238,7 +238,7 @@ export class SongTrack { }
 
 对于ngStyle，我们可以做同样的事情，但是由于我们需要键值对，选项较少。
 
-```
+```html
 <song-track [ngStyle]="{'color': 'white'}" style="margin: 5px;"><song-track [ngStyle]="{'font-size.px': '12'}">
 <song-track [ngStyle]="{'font-size': '12px'}">
 <song-track [ngStyle]="{'color': 'white', 'font-size': '12px'}">
@@ -254,7 +254,7 @@ export class SongTrack { }
 
 如果我们需要访问我们的容器或与其他选择器一起使用，我们可以使用:host伪类选择器。
 
-```
+```css
 :host { color: black; }          // <song-track>
 :host(.selected) { color: red; } // <song-track class="selected">
 ```
@@ -265,7 +265,7 @@ export class SongTrack { }
 
 我们可以添加一个这样的样式，它会在组件的宿主元素的祖先元素中查找匹配的祖先元素直到文档的根。
 
-```
+```css
 :host-context(.theme) { color: red; }   
 :host-context(#player1) { color: red; }
 ```
@@ -278,7 +278,7 @@ export class SongTrack { }
 
 **我们可以使用/deep/覆盖Shadow DOM的边界**
 
-```
+```css
 :host  /deep/ .selected { color: red; }
 :host   >>>   .selected { color: red; }
 ```
@@ -289,7 +289,7 @@ export class SongTrack { }
 
 通过使用这个属性，我们可以绑定DOM Properties，DOM Attributes和事件。查看以下不同选项的概述。
 
-```
+```js
 @Component({
  host: {
   'value': 'default',                    //'DOM-prop': 'value'  
@@ -306,7 +306,7 @@ export class SongTrack { }
 
 让我们看一些使用类和样式DOM属性的例子。
 
-```
+```js
 @Component({
   host: {
     //setting multiple values
@@ -328,7 +328,7 @@ export class SongTrack { }
 
 为避免滥用某些样式表达式可能被Angular标记为不安全。
 
-```
+```js
 @Component({
   host: {
     '[style]': '_hostStyle' //unsafe
@@ -339,7 +339,7 @@ export class SongTrack { }
 
 如果遇到这个特殊问题，可以通过在Sanitizer上使用bypassSecurityTrustStyle API来将表达式标记为安全。
 
-```
+```js
 export class SongTrack {
   constructor(private sanitizer: Sanitizer){
     this._hostStyle = this.sanitizer
@@ -352,7 +352,7 @@ export class SongTrack {
 
 我们也可以使用@HostBinding装饰器来设置我们的样式。参见下面的一些例子。参见下面的一些例子。
 
-```
+```js
 export class SongTrack {   
   //<host class="selected"></host>   
   @HostBinding('class.selected') selected = true;
@@ -367,7 +367,7 @@ export class SongTrack {
 
 有时我们可能想要访问底层的DOM元素来操纵它的样式。为了做到这一点，我们需要注入ElementRef并访问nativeElement属性。这将使我们能够访问DOM API。
 
-```
+```js
 export class SongTrack {
   constructor(private element: ElementRef){
     let elem = this.element.nativeElement;
@@ -386,7 +386,7 @@ export class SongTrack {
 
 他们使用了抽象层次来克服由于使用ElementRef带来的跨平台的兼容性问题。
 
-```
+```js
 export class SongTrack {
   constructor(
      private element: ElementRef,
