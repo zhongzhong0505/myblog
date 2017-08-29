@@ -1,5 +1,5 @@
 ---
-title: Angular高级样式指南（V4+）
+title: 【翻译】Angular高级样式指南（V4+）
 date: 2017-08-29 10:42:24
 tags: [angular,ts]
 ---
@@ -7,6 +7,8 @@ tags: [angular,ts]
 原文地址：https://medium.com/google-developer-experts/angular-advanced-styling-guide-v4-f0765616e635
 
 了解如何使用Shadow DOM选择器，Light DOM，@HostBinding，ElementRef，Renderer，Sanitizer等。
+
+<!-- more -->
 
 ![输入图片说明](https://cdn-images-1.medium.com/max/1600/1*gZbmYGcpC7kJPChArG6IHg.png "在这里输入图片标题")
 
