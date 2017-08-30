@@ -86,7 +86,9 @@ since: 2017
 
 #about
 self: <a href="mailto:zhongzhong@asloop.com">我是钟钟</a>
-  <a href="zhongzhong.pdf" target="_blank">我的简历</a>
+  <div><a href="zhongzhong.pdf" target="_blank">我的简历</a></div>
+  <div>我的博客：<a href="http://blog.csdn.net/zsz459520690" target="_blank">csdn</a></div>
+ <a href="https://my.oschina.net/zhongzhong5/blog" target="_blank">开源中国</a></div>
   <p>这里主要是记录一些技术博文。</p>
   <div>交流qq群：638149387</div>
 
