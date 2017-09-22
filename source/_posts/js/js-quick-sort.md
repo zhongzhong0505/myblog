@@ -63,3 +63,44 @@ tags: [js,算法]
 ```
 
 到此，快速排序算法的js实现，就算完成了。
+
+## 快速排序的应用
+### 获取数组中,第k大的数
+这里需要将之前实现的升序排序改成降序,只需要修改partition函数中对应的两个while条件就行了.
+实现代码如下:
+```js
+  const quickSort = (data, start, end, n) => {
+    if (data.length === 1) return data[0];
+    const p = partition(data, start, end);
+    if (n === p + 1) {
+      return data[p];
+    } else if (n > p + 1) {
+      data.splice(start, p + 1);
+      n -= (p + 1) - start;
+      return quickSort(data, 0, data.length - 1, n); //对基准值右侧排序
+    } else {
+      data.splice(p, end);
+      return quickSort(data, 0, data.length - 1, n); //对基准值左侧排序
+    }
+  }
+  const partition = (data, start, end) => {
+    const v = data[start];
+    let i = start,
+      j = end + 1;
+    while (true) { //开始循环
+      while (data[++i] > v) { //一直移动i，知道找到一个元素，该元素小于v
+        if (i == end) break; //如果到最后还是没有找到符合条件的值，退出循环
+      }
+      while (data[--j] < v); //一直移动j，知道找到一个元素，该元素大于v，这里不需要边界值的判断，因为data[start]就是一个哨兵
+      if (i >= j) break; //如果i和j相交，说明此次循环结束
+      swap(data, i, j); //交换data[i]和data[j]的值
+    }
+    swap(data, start, j); //交换data[start]和data[j]的值
+    return j;
+  }
+  const swap = (data, i, j) => {
+    let temp = data[i];
+    data[i] = data[j];
+    data[j] = temp;
+  }
+```
