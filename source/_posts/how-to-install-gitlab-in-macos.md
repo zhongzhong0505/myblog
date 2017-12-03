@@ -10,14 +10,14 @@ tags: [gitlab,mac]
 
 下载下来是一个dmg的安装包，直接安装就可以了。
 
-
+<!-- more -->
 ## 网络问题
 
 嗯，在国内做开发必须谈网络问题，安装好docker之后，建议使用国内的docker镜像源，我用的是aliyun的。
 - 首先你得有aliyun的账号：
 - 然后进去到https://dev.aliyun.com/search.html页面
 - 如果你登录了，进入到上面的页面，点击上面页面的【管理中心】
-- 然后点击【镜像加速器】就可以安装提示配置了
+- 然后点击【镜像加速器】就可以按照提示配置了
 
 ## 安装portainer
 
@@ -42,7 +42,7 @@ localhost:9000
 使用下面的命令安装gitlab-ce
 
 ```js
-sudo docker run --detach \ 
+sudo docker run --detach \
     --hostname mygitlab.com \
     --publish 443:443 --publish 81:80 --publish 22:22 \
     --name gitlab \
@@ -65,6 +65,9 @@ sudo docker run --detach \
 然后打开浏览器访问：
 
 localhost:81
+或者
+mygitlab.com:81
+
 
 这个时候会要求你修改root账户的密码，输入2次密码确定就可以了。注意这个root账户是gitlab的账户不是你mac系统的root账户，不要搞错了。
 
