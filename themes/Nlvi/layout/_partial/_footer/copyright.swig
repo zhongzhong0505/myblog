@@ -24,4 +24,4 @@
     </div>
     {% endif %}
 </div>
-<a href="http://www.miitbeian.gov.cn" target="_blank" style="color:#ccc;">粤ICP备17089169号</a>
+<a href="http://www.miitbeian.gov.cn" target="_blank" style="color:#ccc;text-decoration:none;font-size:14px;">粤ICP备17089169号</a>
