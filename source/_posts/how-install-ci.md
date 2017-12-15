@@ -7,7 +7,7 @@ tags: [gitlab]
 ## 安装gitlab-runner
 
 官方文档地址： https://docs.gitlab.com/runner/install/
-
+<!-- more -->
 注意，这里我们选择install as a Docker service。
 
 1. 首先使用下面的命令来安装gitlab-runner

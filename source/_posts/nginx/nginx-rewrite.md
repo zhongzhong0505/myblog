@@ -8,7 +8,7 @@ tags: [nginx]
 例如：/game/abc.html ——>  /abc.html
 
 重写规则如下：
-
+<!-- more -->
 location ~* ^/game{
     rewrite (/game/)(.*)$ /$2 break;
     root /Users/zhongzhong/workspace/lean-css;

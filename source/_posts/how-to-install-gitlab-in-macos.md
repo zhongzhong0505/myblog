@@ -7,10 +7,9 @@ tags: [gitlab,mac]
 ## 安装docker
 下载地址：
   https://docs.docker.com/docker-for-mac/install/
-
+<!-- more -->
 下载下来是一个dmg的安装包，直接安装就可以了。
 
-<!-- more -->
 ## 网络问题
 
 嗯，在国内做开发必须谈网络问题，安装好docker之后，建议使用国内的docker镜像源，我用的是aliyun的。
