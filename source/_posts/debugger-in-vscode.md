@@ -1,5 +1,5 @@
 ---
-title: 在VS Code中调试ES6代码
+title: 【翻译】在VS Code中调试ES6代码
 date: 2018-06-09 22:16:34
 tags: [js,es,node, debugger]
 ---
@@ -161,3 +161,4 @@ $ npm run compile
 
 呼！回顾这些步骤，看起来比实际工作要多得多。一旦习惯了添加Babel依赖并创建启动配置，为调试设置ES6项目实际上非常快。转译过程肯定会增加一些开销，但只需一点点努力，您将立即调试您的ES6项目。
 
+原文地址：https://medium.com/@drcallaway/debugging-es6-in-visual-studio-code-4444db797954
