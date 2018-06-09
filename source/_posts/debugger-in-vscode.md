@@ -6,6 +6,8 @@ tags: [js,es,node, debugger]
 
 我之前是做Java的。调试Java程序很简单。您只需将IDE配置为最新版本的JDK，使用所有最新的语法优点编写应用程序，添加断点并在调试模式下运行它。瞧！你正在调试...
 
+<!-- more -->
+
 现在我主要编写JavaScript（nodejs和浏览器）我经常惊讶于调试一个简单的ES6 JavaScript应用程序是多么复杂和繁琐。为什么我们不能告诉我们的编辑器/ IDE我们的目标JavaScript版本并开始调试？如果只是这么简单...
 
 长久以来，我对JetBrains都非常满意，最近我切换到了VS Code。我经常喜欢尝试开源编辑，但我总是回到IntelliJ或WebStorm。Eclipse? NetBeans? Atom? Brackets? 尽管他们都试过，但都是很沮丧的回到IntelliJ的怀抱。然而，VS Code是我最近的一次冲击，看起来这种关系可能有机会。
